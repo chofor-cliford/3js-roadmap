@@ -1,12 +1,12 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
-import GUI from "lil-gui";
+// import GUI from "lil-gui";
 import { FontLoader } from "three/examples/jsm/Addons.js";
 
 export const threeDText = () => {
   // Debug
-  const gui = new GUI();
+//   const gui = new GUI();
 
   // Canvas
   const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
@@ -135,10 +135,10 @@ export const threeDText = () => {
   /**
    * Animate
    */
-  const clock = new THREE.Clock();
+//   const clock = new THREE.Clock();
 
   const tick = () => {
-    const elapsedTime = clock.getElapsedTime();
+    // const elapsedTime = clock.getElapsedTime();
 
     // Update controls
     controls.update();

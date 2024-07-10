@@ -16,22 +16,20 @@ export const materials = () => {
   const textureLoader = new THREE.TextureLoader();
 
   const doorColorTexture = textureLoader.load("/assets/door/color.jpg");
-  const doorAlphaTexture = textureLoader.load("/assets/door/alpha.jpg");
+//   const doorAlphaTexture = textureLoader.load("/assets/door/alpha.jpg");
   const doorAmbientOcclusionTexture = textureLoader.load(
     "/assets/door/ambientOcclusion.jpg"
   );
-  const doorHeightTexture = textureLoader.load("/assets/door/height.jpg");
+//   const doorHeightTexture = textureLoader.load("/assets/door/height.jpg");
   const doorNormalTexture = textureLoader.load("/assets/door/normal.jpg");
   const doorMetalnessTexture = textureLoader.load("/assets/door/metalness.jpg");
   const doorRoughnessTexture = textureLoader.load("/assets/door/roughness.jpg");
   const matcapTexture = textureLoader.load("/assets/texture/matcap.jpg");
-  const matcapTexture1 = textureLoader.load("/assets/texture/matcap2.png");
-  const matcapTexture2 = textureLoader.load("/assets/texture/matcap3.avif");
-  const matcapTexture3 = textureLoader.load("/assets/texture/matcap4.png");
+//   const matcapTexture1 = textureLoader.load("/assets/texture/matcap2.png");
+//   const matcapTexture2 = textureLoader.load("/assets/texture/matcap3.avif");
+//   const matcapTexture3 = textureLoader.load("/assets/texture/matcap4.png");
 
-  const gradientTexture = textureLoader.load(
-    "/assets/texture/checkerboard-1024x1024.png"
-  );
+//   const gradientTexture = textureLoader.load( "/assets/texture/checkerboard-1024x1024.png");
 
   const rgbLoader = new RGBELoader();
   rgbLoader.load("/assets/environment/quattro_canti_2k.hdr", (texture) => {

@@ -1,4 +1,4 @@
 import './index.css'
-import { lights } from './lessons/lights.ts';
+import { shadows } from './lessons/shadows.ts';
 
-lights();
+shadows();

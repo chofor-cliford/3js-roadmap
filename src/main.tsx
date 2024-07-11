@@ -1,4 +1,4 @@
 import './index.css'
-import { threeDText } from './lessons/3d-text.ts';
+import { lights } from './lessons/lights.ts';
 
-threeDText();
+lights();

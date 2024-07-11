@@ -16,20 +16,20 @@ export const materials = () => {
   const textureLoader = new THREE.TextureLoader();
 
   const doorColorTexture = textureLoader.load("/assets/door/color.jpg");
-//   const doorAlphaTexture = textureLoader.load("/assets/door/alpha.jpg");
-  const doorAmbientOcclusionTexture = textureLoader.load(
-    "/assets/door/ambientOcclusion.jpg"
-  );
-//   const doorHeightTexture = textureLoader.load("/assets/door/height.jpg");
-  const doorNormalTexture = textureLoader.load("/assets/door/normal.jpg");
-  const doorMetalnessTexture = textureLoader.load("/assets/door/metalness.jpg");
-  const doorRoughnessTexture = textureLoader.load("/assets/door/roughness.jpg");
-  const matcapTexture = textureLoader.load("/assets/texture/matcap.jpg");
-//   const matcapTexture1 = textureLoader.load("/assets/texture/matcap2.png");
-//   const matcapTexture2 = textureLoader.load("/assets/texture/matcap3.avif");
-//   const matcapTexture3 = textureLoader.load("/assets/texture/matcap4.png");
+  //   const doorAlphaTexture = textureLoader.load("/assets/door/alpha.jpg");
+  //   const doorAmbientOcclusionTexture = textureLoader.load(
+  // "/assets/door/ambientOcclusion.jpg"
+  //   );
+  //   const doorHeightTexture = textureLoader.load("/assets/door/height.jpg");
+  //   const doorNormalTexture = textureLoader.load("/assets/door/normal.jpg");
+  //   const doorMetalnessTexture = textureLoader.load("/assets/door/metalness.jpg");
+  //   const doorRoughnessTexture = textureLoader.load("/assets/door/roughness.jpg");
+  //   const matcapTexture = textureLoader.load("/assets/texture/matcap.jpg");
+  //   const matcapTexture1 = textureLoader.load("/assets/texture/matcap2.png");
+  //   const matcapTexture2 = textureLoader.load("/assets/texture/matcap3.avif");
+  //   const matcapTexture3 = textureLoader.load("/assets/texture/matcap4.png");
 
-//   const gradientTexture = textureLoader.load( "/assets/texture/checkerboard-1024x1024.png");
+  //   const gradientTexture = textureLoader.load( "/assets/texture/checkerboard-1024x1024.png");
 
   const rgbLoader = new RGBELoader();
   rgbLoader.load("/assets/environment/quattro_canti_2k.hdr", (texture) => {
@@ -39,7 +39,7 @@ export const materials = () => {
   });
 
   doorColorTexture.colorSpace = THREE.SRGBColorSpace;
-  matcapTexture.colorSpace = THREE.SRGBColorSpace;
+//   matcapTexture.colorSpace = THREE.SRGBColorSpace;
 
   // Objects
   //   const material = new THREE.MeshBasicMaterial({
@@ -110,21 +110,19 @@ export const materials = () => {
   // This extends the MeshStandardMaterial class but has acces to extra features e.g. cleacoat, sheen, iridescence, transmission.
   // This is the most realistic material and worst for performance
   const material = new THREE.MeshPhysicalMaterial();
-  material.side = THREE.DoubleSide;
-  material.metalness = 1;
-  material.roughness = 1;
-  material.map = doorColorTexture;
-  material.aoMap = doorAmbientOcclusionTexture;
-  material.aoMapIntensity = 1;
-  // This means where it is white, it will be raised and where it is black, it will be lowered
-//   material.displacementMap = doorHeightTexture;
-//   material.displacementScale = 0.1; // This is the height of the displacement
-  material.metalnessMap = doorMetalnessTexture;
-  material.roughnessMap = doorRoughnessTexture;                  
-  material.normalMap = doorNormalTexture;
-  material.normalScale.set(0.5, 0.5);
-  material.transparent = true;
-// material.alphaMap = doorAlphaTexture;
+  material.metalness = 0;
+  material.roughness = 0;
+  // material.map = doorColorTexture
+  // material.aoMap = doorAmbientOcclusionTexture
+  // material.aoMapIntensity = 1
+  // material.displacementMap = doorHeightTexture
+  // material.displacementScale = 0.1
+  // material.metalnessMap = doorMetalnessTexture
+  // material.roughnessMap = doorRoughnessTexture
+  // material.normalMap = doorNormalTexture
+  // material.normalScale.set(0.5, 0.5)
+  // material.transparent = true
+  // material.alphaMap = doorAlphaTexture
 
   // Adding Debug UI
   gui.add(material, "metalness").min(0).max(1).step(0.0001);
@@ -156,17 +154,17 @@ export const materials = () => {
 
   // Transmission simulates the light passing through the material.
   // IOR stands for index of refraction, and depends on the material, for example, glass has an IOR of 1.5, diamond has an IOR of 2.4.
-    material.transmission = 1;
-    material.ior = 1.5;
-    material.thickness = 0.5; // This is a fixed value.
+  material.transmission = 1;
+  material.ior = 1.5;
+  material.thickness = 0.5; // This is a fixed value.
 
-    gui.add(material, "transmission").min(0).max(1).step(0.0001);
-    gui.add(material, "ior").min(0).max(10).step(0.0001);
-    gui.add(material, "thickness").min(0).max(10).step(0.0001);
+  gui.add(material, "transmission").min(0).max(1).step(0.0001);
+  gui.add(material, "ior").min(0).max(10).step(0.0001);
+  gui.add(material, "thickness").min(0).max(10).step(0.0001);
 
-    // The point material is used for particles, their sizes, color, what is drawn on them, etc.
-    // The raw shader material to create custom materials using GLSL code.
-    // Don't forget to use debug UI to find the best values for your materials.
+  // The point material is used for particles, their sizes, color, what is drawn on them, etc.
+  // The raw shader material to create custom materials using GLSL code.
+  // Don't forget to use debug UI to find the best values for your materials.
 
   // Sphere
   const sphere = new THREE.Mesh(

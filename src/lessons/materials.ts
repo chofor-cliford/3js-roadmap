@@ -15,15 +15,15 @@ export const materials = () => {
   // Textures
   const textureLoader = new THREE.TextureLoader();
 
-  const doorColorTexture = textureLoader.load("/assets/door/color.jpg");
-  //   const doorAlphaTexture = textureLoader.load("/assets/door/alpha.jpg");
+  const doorColorTexture = textureLoader.load("/assets/_door/color.jpg");
+  //   const doorAlphaTexture = textureLoader.load("/assets/_door/alpha.jpg");
   //   const doorAmbientOcclusionTexture = textureLoader.load(
-  // "/assets/door/ambientOcclusion.jpg"
+  // "/assets/_door/ambientOcclusion.jpg"
   //   );
-  //   const doorHeightTexture = textureLoader.load("/assets/door/height.jpg");
-  //   const doorNormalTexture = textureLoader.load("/assets/door/normal.jpg");
-  //   const doorMetalnessTexture = textureLoader.load("/assets/door/metalness.jpg");
-  //   const doorRoughnessTexture = textureLoader.load("/assets/door/roughness.jpg");
+  //   const doorHeightTexture = textureLoader.load("/assets/_door/height.jpg");
+  //   const doorNormalTexture = textureLoader.load("/assets/_door/normal.jpg");
+  //   const doorMetalnessTexture = textureLoader.load("/assets/_door/metalness.jpg");
+  //   const doorRoughnessTexture = textureLoader.load("/assets/_door/roughness.jpg");
   //   const matcapTexture = textureLoader.load("/assets/texture/matcap.jpg");
   //   const matcapTexture1 = textureLoader.load("/assets/texture/matcap2.png");
   //   const matcapTexture2 = textureLoader.load("/assets/texture/matcap3.avif");
@@ -39,7 +39,7 @@ export const materials = () => {
   });
 
   doorColorTexture.colorSpace = THREE.SRGBColorSpace;
-//   matcapTexture.colorSpace = THREE.SRGBColorSpace;
+  matcapTexture.colorSpace = THREE.SRGBColorSpace;
 
   // Objects
   //   const material = new THREE.MeshBasicMaterial({

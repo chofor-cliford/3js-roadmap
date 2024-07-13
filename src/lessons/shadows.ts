@@ -21,7 +21,7 @@ export const shadows = () => {
 
   // Canvas
   const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
-    
+
   // Scene
   const scene = new THREE.Scene();
 
@@ -118,7 +118,10 @@ export const shadows = () => {
   sphere.position.y = 0.5;
   sphere.castShadow = true;
 
-  const plane = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), new THREE.MeshBasicMaterial());
+  const plane = new THREE.Mesh(
+    new THREE.PlaneGeometry(5, 5),
+    new THREE.MeshBasicMaterial()
+  );
   plane.rotation.x = -Math.PI * 0.5;
   plane.position.y = -0.5;
 
@@ -135,8 +138,8 @@ export const shadows = () => {
       alphaMap: simpleShadow,
     })
   );
-    sphereShadow.rotation.x = -Math.PI * 0.5;
-    sphereShadow.position.y = plane.position.y + 0.01;
+  sphereShadow.rotation.x = -Math.PI * 0.5;
+  sphereShadow.position.y = plane.position.y + 0.01;
 
   scene.add(sphereShadow);
 
@@ -199,19 +202,19 @@ export const shadows = () => {
   /**
    * Animate
    */
-  const clock = new THREE.Clock()
+  const clock = new THREE.Clock();
 
   const tick = () => {
-    const elapsedTime = clock.getElapsedTime()
+    const elapsedTime = clock.getElapsedTime();
     // update sphere
-    sphere.position.x = Math.cos(elapsedTime) * 1.5
-    sphere.position.z = Math.sin(elapsedTime) * 1.5
-    sphere.position.y = Math.abs(Math.sin(elapsedTime * 3))
+    sphere.position.x = Math.cos(elapsedTime) * 1.5;
+    sphere.position.z = Math.sin(elapsedTime) * 1.5;
+    sphere.position.y = Math.abs(Math.sin(elapsedTime * 3));
 
     // update shadow
-    sphereShadow.position.x = sphere.position.x
-    sphereShadow.position.z = sphere.position.z
-    sphereShadow.material.opacity = (1 - sphere.position.y) * 0.5
+    sphereShadow.position.x = sphere.position.x;
+    sphereShadow.position.z = sphere.position.z;
+    sphereShadow.material.opacity = (1 - sphere.position.y) * 0.5;
 
     // Update controls
     controls.update();

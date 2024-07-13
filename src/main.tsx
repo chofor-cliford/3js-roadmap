@@ -1,4 +1,4 @@
 import './index.css'
-import { shadows } from './lessons/shadows.ts';
+import { hunterHouse } from './practice/hunterHouse.ts';
 
-shadows();
+hunterHouse();

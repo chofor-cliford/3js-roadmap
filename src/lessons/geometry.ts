@@ -11,14 +11,46 @@ export const geometry = () => {
   // Object
   const geometry = new THREE.BufferGeometry();
 
-  const count = 50;
-  const positionsArray = new Float32Array(count * 3 * 3);
+  const radius = 1;
+  const height = 2;
+  const radialSegments = 20;
 
-  for (let i = 0; i < count * 3 * 3; i++) {
-    positionsArray[i] = (Math.random() - 0.5) * 4;
+  const positionsArray = [];
+  const indicesArray = [];
+
+  // Generate vertices and indices for the cone
+  for (let i = 0; i < radialSegments; i++) {
+    const theta = (i / radialSegments) * Math.PI * 2;
+    const nextTheta = ((i + 1) / radialSegments) * Math.PI * 2;
+
+    // Base vertices
+    const x0 = radius * Math.cos(theta);
+    const y0 = 0;
+    const z0 = radius * Math.sin(theta);
+
+    const x1 = radius * Math.cos(nextTheta);
+    const y1 = 0;
+    const z1 = radius * Math.sin(nextTheta);
+
+    // Apex vertex
+    const x2 = 0;
+    const y2 = height;
+    const z2 = 0;
+
+    // Push vertices
+    positionsArray.push(x0, y0, z0, x1, y1, z1, x2, y2, z2);
+
+    // Calculate indices
+    const baseIndex = i * 3;
+    indicesArray.push(baseIndex, baseIndex + 1, baseIndex + 2);
   }
-  const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
+
+  const positionsAttribute = new THREE.Float32BufferAttribute(
+    positionsArray,
+    3
+  );
   geometry.setAttribute("position", positionsAttribute);
+  geometry.setIndex(indicesArray);
 
   //   const geometry = new THREE.BoxGeometry(1, 1, 1, 2, 2, 2);
   const material = new THREE.MeshBasicMaterial({

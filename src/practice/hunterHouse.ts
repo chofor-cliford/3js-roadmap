@@ -1,3 +1,23 @@
+// TODO: Add more tweaks for lights, colors, texture repetitions, ghost speed, etc.
+
+// TODO: Add tweaks to the Sky as seen in the example (the code)
+
+// TODO: Stray away from the cube house
+// - Add more shapes like a garage, a tool shed, toilets in the back, etc.
+
+// TODO: Add more objects to the scene
+// - Fences, pathways, rocks, wood signs, windows, etc.
+
+// TODO: Once you’re done learning how to import models, get back to this lesson
+
+// TODO: Explore the Basis format
+
+// TODO: Add sounds
+
+// TODO: Make the door light flicker
+
+// TODO: Continue improving the project
+
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Timer } from "three/addons/misc/Timer.js";
@@ -94,8 +114,12 @@ export const hunterHouse = () => {
   );
   const doorHeightTexture = textureLoader.load("/assets/door/height.webp");
   const doorNormalTexture = textureLoader.load("/assets/door/normal.webp");
-  const doorMetalnessTexture = textureLoader.load("/assets/door/metalness.webp");
-  const doorRoughnessTexture = textureLoader.load("/assets/door/roughness.webp");
+  const doorMetalnessTexture = textureLoader.load(
+    "/assets/door/metalness.webp"
+  );
+  const doorRoughnessTexture = textureLoader.load(
+    "/assets/door/roughness.webp"
+  );
 
   floorColorTexture.colorSpace = THREE.SRGBColorSpace; // Always do this for color textures
   wallColorTexture.colorSpace = THREE.SRGBColorSpace; // Always do this for color textures
@@ -428,7 +452,6 @@ export const hunterHouse = () => {
   // Fog
   scene.fog = new THREE.FogExp2("#02343f", 0.1);
 
-
   // Helpers
   // const directionalLightCameraHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
   // scene.add(directionalLightCameraHelper);
@@ -443,7 +466,6 @@ export const hunterHouse = () => {
 
   // const doorLightHelper = new THREE.PointLightHelper(doorLight, 0.2);
   // scene.add(doorLightHelper);
-
 
   /**
    * Animate

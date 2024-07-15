@@ -1,4 +1,4 @@
 import './index.css'
-import { hunterHouse } from './practice/hunterHouse.ts';
+import { particles } from './practice/particles.ts';
 
-hunterHouse();
+particles();

@@ -1,4 +1,4 @@
 import './index.css'
-import { particles } from './practice/particles.ts';
+import { galaxy } from './practice/galaxy.ts';
 
-particles();
+galaxy();

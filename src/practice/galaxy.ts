@@ -185,7 +185,7 @@ export const galaxy = () => {
     // Timer
 
     timer.update();
-    const elapsedTime = timer.getElapsed();
+    // const elapsedTime = timer.getElapsed();
 
     // Update controls
     controls.update();

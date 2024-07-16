@@ -1,11 +1,10 @@
 import * as THREE from "three";
 import { Timer } from "three/addons/misc/Timer.js";
-import GUI from "lil-gui";
+// import GUI from "lil-gui";
 import { OrbitControls } from "three/examples/jsm/Addons.js";
 
 // Debug
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const gui = new GUI();
+// const gui = new GUI();
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
@@ -14,8 +13,7 @@ const canvas = document.querySelector("canvas.webgl") as HTMLCanvasElement;
 const scene = new THREE.Scene();
 
 // Textures
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const textureLoader = new THREE.TextureLoader();
+// const textureLoader = new THREE.TextureLoader();
 
 // Object
 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -51,8 +49,7 @@ const tick = () => {
   // Timer
 
   timer.update();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const elapsedTime = timer.getElapsed();
+  // const elapsedTime = timer.getElapsed();
 
   // Update controls
   controls.update();
